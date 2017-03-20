@@ -11,7 +11,7 @@
     <ul>
         <li>
             <a href="{{ path('admin_index') }}">Back to the list</a>
-        </li>
+        </li> 
         {% if is_granted('ROLE_ADMIN') %}
         <li>
             {{ form_start(delete_form) }}

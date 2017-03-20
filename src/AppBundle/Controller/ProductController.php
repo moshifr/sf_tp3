@@ -149,7 +149,7 @@ class ProductController extends Controller
         if (!$this->get('security.authorization_checker')
           ->isGranted('ROLE_ADMIN')) {
          throw $this->createAccessDeniedException();
-        } 
+        }  
         $form = $this->createDeleteForm($product);
         $form->handleRequest($request);
 

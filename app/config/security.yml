@@ -17,7 +17,6 @@ security:
                   gestionnaire: { password: 1a1dc91c907325c69271ddf0c944bc72, roles: 'ROLE_GESTIONNAIRE'}  #pass
                   user: { password: 1a1dc91c907325c69271ddf0c944bc72, roles: 'ROLE_USER'}  #pass
 
-
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
