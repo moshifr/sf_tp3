@@ -108,7 +108,7 @@ class CategoryController extends Controller
     {
       if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
        throw $this->createAccessDeniedException();
-      } 
+      }
 
         $form = $this->createDeleteForm($category);
         $form->handleRequest($request);
@@ -118,7 +118,7 @@ class CategoryController extends Controller
             $em->remove($category);
             $em->flush($category);
         }
-
+ 
         return $this->redirectToRoute('admin_category_index');
     }
 

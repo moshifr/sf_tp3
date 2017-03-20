@@ -16,7 +16,7 @@ security:
                   admin: { password: 25e4ee4e9229397b6b17776bfceaf8e7, roles: 'ROLE_ADMIN' } #adminpass
                   gestionnaire: { password: 1a1dc91c907325c69271ddf0c944bc72, roles: 'ROLE_GESTIONNAIRE'}  #pass
                   user: { password: 1a1dc91c907325c69271ddf0c944bc72, roles: 'ROLE_USER'}  #pass
-
+ 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:

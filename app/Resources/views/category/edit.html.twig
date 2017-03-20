@@ -11,8 +11,8 @@
     <ul>
         <li>
             <a href="{{ path('admin_category_index') }}">Back to the list</a>
-        </li> 
-        {% if is_granted('ROLE_ADMIN') %}
+        </li>
+        {% if is_granted('ROLE_ADMIN') %} 
         <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
