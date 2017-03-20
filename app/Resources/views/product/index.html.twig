@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Products list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Datecreate</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td><a href="{{ path('admin_show', { 'id': product.id }) }}">{{ product.id }}</a></td>
+                <td>{{ product.category }} </td>
+                <td>{{ product.title }}</td>
+                <td>{% if product.image %}<img src="{{ asset('uploads/' ~ product.image.path ) }}" />{% endif %}</td>
+                <td>{% if product.dateCreate %}{{ product.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_show', { 'id': product.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_edit', { 'id': product.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_new') }}">Create a new product</a>
+        </li>
+    </ul>
+{% endblock %}

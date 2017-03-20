@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Liste des produits</h1>
+    <hr>
+    {% if form %}
+    {{ form(form) }}
+    {% endif %}
+	<hr>
+	{# liste des produits #}
+    {% for product in products %}
+	<div>
+		<p style="cursor: pointer">
+			<strong>{{ product.title }}</strong> ({{ product.price}}) &euro;
+		</p>	
+		{# On cache la description #}
+		<div style="display: none">
+			{{ product.description }}
+		</div>
+	</div>
+	{% endfor %}
+
+{% endblock %}
+{% block javascripts %} 
+	{{ parent() }}
+	<script>
+	$('p').click(function(){
+		$(this).next().slideToggle();
+	});</script>
+ {% endblock%}
